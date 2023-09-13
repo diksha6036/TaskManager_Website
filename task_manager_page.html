@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond&family=Kaushan+Script" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Rubik+Puddles&family=Rubik+Wet+Paint"rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="task_manager_script.js" defer></script>
+<style>
+  #heading{
+      margin-top: 1.5rem;
+      text-align: center;
+      font-family: 'Rubik Wet Paint', cursive;
+      color:rgb(214, 78, 106);
+  }
+  body{
+      height: 100%;
+      width: 100%;
+      
+background: linear-gradient(90deg, hsla(0, 38%, 78%, 1) 0%, hsla(50, 22%, 72%, 1) 100%);
+  }
+  #taskname{
+      font-family: 'Kaushan Script', cursive;
+      font-size: 1.2rem;
+  }
+  table{
+      font-family: 'Kaushan Script', cursive;
+      font-size: 1.5rem;
+  }
+  #addTask{
+      font-family: 'Kaushan Script', cursive;
+      background-color:rgb(165, 40, 119);
+      border: pink;
+  }
+  .cont{
+    display: flex;
+  }
+  h2{
+
+    margin-top: 9rem;
+    margin-right: 17rem;
+    font-family: 'Kaushan Script', cursive;
+    color:rgb(207, 62, 62);
+
+  }
+  .catbut{
+    margin-left: 1rem;
+  }
+  .workbut{
+    height: 2.8rem;
+    width: 6.3rem;
+    font-size: 1.3rem;
+    border-radius: 6px;
+    font-family: 'Kaushan Script', cursive;
+    background-color:rgb(17, 17, 165);
+    color: white;
+    border-color:rgb(21, 21, 129) ;
+    margin-left: -4.6rem;
+    margin-top: 3rem;
+  }
+  .workbut:hover{
+    background-color:rgb(8, 8, 76);
+  }
+  .perbut{
+    height: 2.8rem;
+    width: 6.3rem;
+    font-size: 1.3rem;
+    border-radius: 6px;
+    font-family: 'Kaushan Script', cursive;
+    background-color:rgb(9, 100, 9);
+    border-color: rgb(4, 48, 4);
+    color: white;
+    margin-left: 3rem;
+  }
+  .perbut:hover{
+    background-color:rgb(4, 58, 4);
+  }
+  .shopbut{
+    height: 2.8rem;
+    width: 6.3rem;
+    font-size: 1.3rem;
+    border-radius: 6px;
+    font-family: 'Kaushan Script', cursive;
+    background-color:rgb(129, 8, 8);
+    color: white;
+    border-color:rgb(118, 21, 21); ;
+    margin-top: 2rem;
+    margin-left: -4.6rem;
+  }
+  .shopbut:hover{
+    background-color:rgb(70, 8, 8);
+  }
+  .allbut{
+    height: 2.8rem;
+    width: 6.3rem;
+    font-size: 1.3rem;
+    border-radius: 6px;
+    font-family: 'Kaushan Script', cursive;
+    background-color:rgb(111, 101, 23);
+    color: white;
+    border-color:rgb(111, 101, 23) ;
+    margin-top: 2rem;
+    margin-left: 3rem;
+  }
+  .allbut:hover{
+    background-color:rgb(72, 64, 9);
+  }
+  .lastbut{
+    margin-top: 1.5rem;
+    height: 2.8rem;
+    width: 11.3rem;
+    font-size: 1.2rem;
+    margin-left: -1rem;
+    font-family: 'Kaushan Script', cursive;
+    border-radius: 6px;
+    color: white;background-color:rgb(152, 13, 66);
+    border: none;
+    border-color:rgb(152, 13, 66) ;
+  }
+  .lastbut:hover{
+    background-color:rgb(102, 19, 51);
+  }
+  .completebtn{
+    margin-top: 1.5rem;
+    height: 2.8rem;
+    width: 11.3rem;
+    font-size: 1.2rem;
+    margin-left: -1rem;
+    font-family: 'Kaushan Script', cursive;
+    border-radius: 6px;
+    color: white;background-color:rgb(70, 8, 8);
+    border: none;
+    border-color:rgb(152, 13, 66) ;
+  }
+  .completebtn:hover{
+    background-color:rgb(41, 3, 3);
+  }
+  hr{
+    margin-top: 2.5rem;
+    margin-right: 13rem;
+    margin-left: -3rem;
+   
+    
+  }
+  .ano{
+    display: flex;
+    margin-left: 15rem;
+    /* height: 3rem; */
+    /* height: 0px; */
+  
+    /* visibility: hidden; */
+  }
+  #inp{
+    margin-top: 0.5rem;
+    margin-left: 11rem;
+    height:2rem;
+    width: 0px;
+    visibility: hidden;
+    position: absolute;
+    transition: 1s;
+    border-radius: 6px;
+    padding: 10px;
+    font-family: 'Kaushan Script', cursive;
+    /* animation-name:inptrans;
+    animation-duration: 2s; */
+  }
+  /* #inp:hover{
+    margin-top: 0.5rem;
+   
+    height:2rem;
+   
+    /* visibility: hidden; */
+    /* position: absolute; */
+  /* } */ 
+  /* @keyframes inptrans {
+    from{
+      margin-top: 0.5rem;
+    margin-left: 9.5rem;
+    height:2rem;
+    width: 0px;
+    visibility: hidden;
+    position: absolute;
+    border: none;
+    background-color:transparent;
+    }
+    to{
+    margin-top: 0.5rem;
+    height:2rem;
+    width: 12rem;
+    margin-left: -1.5rem;
+    visibility: hidden;
+    position: absolute;
+    }
+  } */
+  .transbut{
+    border:none;
+    background-color: transparent;
+    font-size: 1.7rem;
+    margin-left:9rem;
+    margin-top: 0.3rem;
+    margin-bottom: 0.3rem;
+    position:absolute;
+  }
+  .godown{
+    margin-top: 3.3rem;
+  }
+  .DS{
+    display: flex;
+  }
+  #date{
+    height: 2.4rem;
+    width: 9rem;
+    font-family: 'Kaushan Script', cursive;
+    /* border-radius: 6px; */
+    border: none;
+    color: rgb(93, 86, 86);
+    padding-left:7px;
+    margin-top: 1rem;
+    font-size: 1.2rem;
+  }
+ 
+  #addDate{
+    background-color:rgb(165, 40, 119);
+    border: none;
+    font-family: 'Kaushan Script', cursive;
+    margin-left:1rem;
+  }
+  #catg2{
+    height: 2.4rem;
+    width: 9rem;
+    font-family: 'Kaushan Script', cursive;
+    /* border-radius: 6px; */
+    border: none;
+    color: rgb(93, 86, 86);
+    padding-left:7px;
+    margin-top: 1rem;
+    font-size: 1.2rem;
+  }
+
+  #addCat{
+    background-color:rgb(165, 40, 119);
+    border: none;
+    font-family: 'Kaushan Script', cursive;
+    margin-left:1rem;
+  }
+  
+  
+</style>
+</head>
+<body>
+  <h1 id="heading">Manage Your Tasks </h1>
+  <div class="cont">
+  <div class="container-fluid">
+      <div class="container" >
+        <div class="mt-5" style="max-width: 700px;">
+          <div class="input-group mb-3  w-150">
+            <input type="text" class="form-control" placeholder="Add Any task here!" aria-label="Recipient's username" id="taskname" aria-describedby="button-addon2" >
+            <button class="btn text-white btn-info" type="button" id="addTask" onclick="">Add Task</button>
+          </div>
+          <!-- <div class="filter my-3">
+              <div class="row justify-content-between">
+                 <div class="col"> 
+                 </div>
+                 <div class="col">
+                    <div class="input-group">
+                       <input type="search" class="form-control" placeholder="Search..." aria-label="Recipient's username" id="search" style="font-family:Kaushan Script ;" >
+                    </div>
+                 </div>
+              </div>
+           </div> -->
+           <div class="DS">
+           <div class="addDatee">
+              <input type="date" id="date" >
+              <button class="btn text-white btn-info" type="button" id="addDate">Add Date</button>
+              <br>
+              <select name="Catg" id="catg2">
+                <option value="select">Select</option>
+                <option value="Work">Work</option>
+                <option value="Personal">Personal</option>
+                <option value="Shopping">Shopping</option>
+           
+              </select>
+              <button class="btn text-white btn-info" type="button" id="addCat">Add category</button>
+            </div>
+          <div class="filter my-3 ano">
+           <input type="search" id="inp" placeholder="Search..." onclick="startAudioTyping()">
+           <!-- <button id="searchInput2" onclick="startAudioTyping()">search</button> -->
+            <button class="transbut" onclick="trans()"> <i class="fa fa-search"></i></button>
+          </div>  
+           </div>
+
+          <div class="display godown">
+            <table class="table w-150 text-nowrap">
+              <thead>
+                <tr>
+                  <th scope="col">No.</th>
+                  <th scope="col" class="w-10">Task</th>
+                  <th scope="col"><span style="margin-left:1.7rem;">Deadline</span></th>
+                  <th scope="col">Category</th>
+                  <th scope="col"><span style="margin-left: 2.5rem;">Actions</span></th>
+                </tr>
+              </thead>
+              <tbody id="records">
+                <!-- <tr>
+                  <th ></th>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr> -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="cat">
+      <h2>Category</h2>
+      <div class="catbut">
+      <button class="workbut" id="workbtn">Work</button>
+        <button class="perbut" id="perbtn">Personal</button>
+        <br>
+        <button class="shopbut" id="shopbtn">Shopping</button>
+        <button class="allbut" id="allbtn">All Tasks</button>
+
+      </div>
+      <hr>
+      <button class="lastbut" id="sortbtn">Prioritize the Tasks
+      </button>
+      <br>
+      <button class="completebtn" id="compbtn">Completed Tasks
+    </button>
+
+    
+      
+    </div>
+  </div>
+</body>
+</html>

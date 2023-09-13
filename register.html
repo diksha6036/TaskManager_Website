@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager</title>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+Puddles&family=Rubik+Wet+Paint"rel="stylesheet">
+    <style>
+    body{
+background:rgba(0,0,0,0.5) url("task_front.jpeg");
+background-repeat: no-repeat;
+background-size: cover;
+background-blend-mode: darken;
+display: flex;
+justify-content: center;
+align-items: center;
+    }
+   
+    .logindiv{
+      margin-top: 4.2rem;
+      height: 80vh;
+      width: 70vw;
+      background-color: white;
+      display: flex;
+   
+    }
+    .left{
+        height:100%;
+        width: 50%;
+        /* background-color: green; */
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+       
+       
+    }
+    .right{
+        height:100%;
+        width: 50%;
+        background-color:whitesmoke;
+        display: flex;
+        /* justify-content: center; */
+        align-items: center;
+        flex-direction: column;
+       
+    }
+    .heading{
+        font-family: 'Rubik Wet Paint', cursive;
+        font-size: 2.5rem;
+        color:goldenrod;
+      }
+      .taskimg{
+        /* width: 0%; */
+        height: 70%;
+      }
+      .liner{
+        width: 100%;
+        
+      }
+      #email{
+ /* font-size: larger; */
+      width: 225px;
+      height: 30px;
+      font-size: 1rem;
+      border-radius: 6px;
+      padding-left: 10px;
+      }
+      #pass{
+ /* font-size: larger; */
+      width: 225px;
+      height: 30px;
+      font-size: 1rem;
+      border-radius: 6px;
+      padding-left: 10px;
+      }
+      .LogIn{
+        width: 240px;
+      height: 35px;
+      font-size: 1rem;
+      border-radius: 6px;
+      padding-left: 10px;
+      /* background-color:rgb(197, 187, 187); */
+      /* background-color:rgb(209, 204, 204); */
+      }
+      .LogIn:hover{
+        background-color:rgb(180, 174, 174);
+      }
+      .headinglog{
+        margin-top:5rem ;
+      }
+      .logininfo{
+        
+        margin-top: 1rem;
+      }
+      .fp{
+        margin-left: 4.3rem;
+      }
+      .reg{
+        margin-left: 1rem;
+        /* font-size: 1.2rem; */
+      }
+      .acc{
+        margin-left: 1rem;
+      
+      }
+</style>
+</head>
+<body>
+    <div class="logindiv">
+      <div class="left"><h1 class="heading">Task <br>Manager</h1>
+       <img src="https://img.freepik.com/free-vector/linear-flat-time-management-infographics-template-icons-website-vector-illustration_126523-2984.jpg" alt="Task-manager" class="taskimg">
+    </div>
+
+      <div class="right">
+          <h1 class="headinglog">Register</h1>
+        <form action="index.html" class="logininfo" id="form">
+            <label for="email"></label>
+            <input type="text" name="email" id="email" required placeholder="Email address"><br><br><br>
+            <label for="pass"></label>
+            <input type="password" name="pass" id="pass" required placeholder="password">
+        </br><br><br>
+        <button class="LogIn" onclick="addData()">Register</button><br><br>
+        <a href="" class="fp">Forgot Password?</a><br><br>
+        <hr class="liner">
+        <span class="acc">Already have an account?</span><a href="index.html" class="reg" >Login</a>
+        </form>
+      </div>
+    </div>
+<script src="register_info.js"></script>
+</body>
+</html>
